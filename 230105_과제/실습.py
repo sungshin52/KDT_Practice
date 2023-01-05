@@ -85,7 +85,10 @@ dict_alph = {}
 string = input('문자열을 입력하세요 > ')
 
 for char in string:
-    dict_alph[char] = string.count(char)
+    if char in dict_alph:
+        dict_alph[char] += 1
+    else:
+        dict_alph[char] = 1
 
 for key in dict_alph:
     print(key, dict_alph[key])
